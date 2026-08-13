@@ -1,3 +1,6 @@
+
+
+Enroll · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+ 
 <header class="site-header">
   <div class="wrap">
     <a href="index.html" class="wordmark">Café <span>des</span> Langues</a>
@@ -23,7 +26,7 @@
     </nav>
   </div>
 </header>
-
+ 
 <section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">Enroll</p>
@@ -31,10 +34,17 @@
     <p>Enrolling takes a few minutes. Here's how it works, and what happens after you submit the form.</p>
   </div>
 </section>
-
+ 
 <section class="section">
   <div class="wrap" style="max-width:700px;">
     <div class="steps">
+      <div class="step">
+        <div class="step-num" aria-hidden="true"></div>
+        <div>
+          <h3>Take the placement assessment</h3>
+          <p>Optional, but it takes about 2 minutes and helps us (and you) know where to start. Scroll down to try it now.</p>
+        </div>
+      </div>
       <div class="step">
         <div class="step-num" aria-hidden="true"></div>
         <div>
@@ -64,16 +74,119 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="cta-row">
       <a class="btn btn-wine" href="https://bit.ly/CafedesLangues" target="_blank" rel="noopener noreferrer">Open the enrollment form ↗</a>
     </div>
-
+ 
     <p class="footnote" style="margin-top:32px;">By enrolling, you agree to our <a href="pricing.html" style="text-decoration:underline;">pricing &amp; payment terms</a> and <a href="code-of-conduct.html" style="text-decoration:underline;">code of conduct</a>.</p>
   </div>
 </section>
-
-<section class="section section-alt">
+ 
+<section class="section section-alt" id="placement">
+  <div class="wrap" style="max-width:760px;">
+    <p class="eyebrow">Step 1</p>
+    <h2>Find your level.</h2>
+    <p style="max-width:60ch;">Five quick questions, plus a short checklist of what you can already do in French. Takes about 2 minutes — no pressure, there's no wrong place to start.</p>
+ 
+    <form id="assessment-form" class="assess-card" novalidate>
+ 
+      <fieldset class="assess-fieldset">
+        <legend>Your details</legend>
+        <div class="assess-field">
+          <label for="assess-name">Name</label>
+          <input type="text" id="assess-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="assess-field">
+          <label for="assess-email">Email</label>
+          <input type="email" id="assess-email" name="email" autocomplete="email" required>
+        </div>
+      </fieldset>
+ 
+      <div class="assess-section">
+        <fieldset class="assess-fieldset">
+          <legend>Quick quiz</legend>
+ 
+          <div class="quiz-q">
+            <p class="q-text">1. Comment dit-on « Hello » en français ?</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q1" value="bonjour"> Bonjour</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="aurevoir"> Au revoir</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="merci"> Merci</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="pardon"> Pardon</label>
+            </div>
+          </div>
+ 
+          <div class="quiz-q">
+            <p class="q-text">2. Je ____ étudiant.</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q2" value="suis"> suis</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="es"> es</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="est"> est</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="sommes"> sommes</label>
+            </div>
+          </div>
+ 
+          <div class="quiz-q">
+            <p class="q-text">3. Choose the best translation: "I would like a coffee, please."</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q3" value="a"> Je voudrais un café, s'il vous plaît.</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="b"> Je veux café toi plaît.</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="c"> Je voudrais café, merci beaucoup.</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="d"> Tu voudrais un café.</label>
+            </div>
+          </div>
+ 
+          <div class="quiz-q">
+            <p class="q-text">4. Si j'avais plus de temps, je ____ plus souvent.</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q4" value="voyagerais"> voyagerais</label>
+              <label class="quiz-option"><input type="radio" name="q4" value="voyage"> voyage</label>
+              <label class="quiz-option"><input type="radio" name="q4" value="avaisvoyage"> avais voyagé</label>
+              <label class="quiz-option"><input type="radio" name="q4" value="voyagerai"> voyagerai</label>
+            </div>
+          </div>
+ 
+          <div class="quiz-q">
+            <p class="q-text">5. Quel est le sens de l'expression « avoir le cafard » ?</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q5" value="triste"> Se sentir triste ou déprimé</label>
+              <label class="quiz-option"><input type="radio" name="q5" value="peur"> Avoir peur des insectes</label>
+              <label class="quiz-option"><input type="radio" name="q5" value="occupe"> Être très occupé</label>
+              <label class="quiz-option"><input type="radio" name="q5" value="faim"> Avoir faim</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+ 
+      <div class="assess-section">
+        <fieldset class="assess-fieldset">
+          <legend>What can you already do?</legend>
+          <p style="margin-top:-8px; margin-bottom:16px;">Check everything that applies — there's no wrong number to check.</p>
+ 
+          <label class="check-item"><input type="checkbox" name="can-do" value="intro"> I can introduce myself and answer simple personal questions in French.</label>
+          <label class="check-item"><input type="checkbox" name="can-do" value="errands"> I can order food, ask for directions, or shop using simple French phrases.</label>
+          <label class="check-item"><input type="checkbox" name="can-do" value="everyday"> I can hold a conversation about everyday topics — work, family, hobbies.</label>
+          <label class="check-item"><input type="checkbox" name="can-do" value="opinions"> I can express opinions and follow the main points of a French news article or podcast.</label>
+          <label class="check-item"><input type="checkbox" name="can-do" value="fluent"> I can discuss abstract or specialised topics fluently and follow fast native speech.</label>
+        </fieldset>
+      </div>
+ 
+      <div class="assess-submit-row">
+        <button type="submit" class="btn btn-wine" style="border:none; cursor:pointer;">See my level</button>
+        <span id="assess-status" class="assess-status"></span>
+      </div>
+    </form>
+ 
+    <div id="result-panel" class="result-panel">
+      <span class="result-badge">Your result</span>
+      <p id="result-level" class="result-level"></p>
+      <p id="result-note" class="result-note"></p>
+    </div>
+  </div>
+</section>
+ 
+<section class="section">
   <div class="wrap" style="max-width:700px;">
     <p class="eyebrow">Trouble with the form?</p>
     <h2>We're one email away.</h2>
@@ -81,7 +194,7 @@
     <a class="btn btn-outline" href="mailto:cafedeslangues.edu@gmail.com">Email cafedeslangues.edu@gmail.com</a>
   </div>
 </section>
-
+ 
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
@@ -103,7 +216,9 @@
     <p class="fineprint">© <span id="year"></span> Café des Langues. All rights reserved.</p>
   </div>
 </footer>
-
+ 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/assessment.js"></script>
 </body>
 </html>
+ 
