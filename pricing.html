@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Carte — Pricing | Café des Langues</title>
+<meta name="description" content="Pricing for Café des Langues group classes and one-on-one sessions, plus payment terms and our attendance and cancellation policy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">Café <span>des</span> Langues</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="pricing.html" class="is-active">La Carte</a>
+      <a href="code-of-conduct.html">Code of Conduct</a>
+      <a href="enroll.html" class="nav-cta">Enroll</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">La Carte</p>
+    <h1>Two ways to learn, one clear price each.</h1>
+    <p>Every package includes live online classes plus self-study materials. Pick what fits, and switch teachers or formats whenever a new cohort opens.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:760px;">
+    <div class="carte-card">
+      <div class="carte-ring" aria-hidden="true"></div>
+
+      <div class="carte-row">
+        <div>
+          <p class="carte-name">Le Groupe<small>Group Class</small></p>
+          <p class="carte-note">Learn alongside other students on a fixed weekly schedule set for your cohort. Current cohort meets weekends, 10:00am–12:00pm (WAT), and Wednesdays, 8:30pm–9:30pm (WAT). New cohorts may run a different schedule, always shared before enrollment.</p>
+        </div>
+        <p class="carte-price">₦50,000<small>per month, flat rate</small></p>
+      </div>
+
+      <div class="carte-row">
+        <div>
+          <p class="carte-name">Le Particulier<small>One-on-One Session</small></p>
+          <p class="carte-note">Private sessions, scheduled flexibly and agreed directly with your teacher, focused on exactly what you need. A session never runs longer than 2 hours.</p>
+        </div>
+        <p class="carte-price">₦15,000<small>per hour</small></p>
+      </div>
+
+      <p class="footnote" style="margin-top:8px;">15% discount applies automatically once your one-on-one hours pass 10 in a month.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap" style="max-width:760px;">
+    <p class="eyebrow">Payment terms</p>
+    <h2>How and when you pay.</h2>
+
+    <div class="trio" style="grid-template-columns:1fr 1fr;">
+      <div class="trio-item">
+        <h3>Le Particulier</h3>
+        <p>Billed hourly at ₦15,000. Payment is split: 50% upfront, and the remaining 50% before the last week of the month.</p>
+      </div>
+      <div class="trio-item">
+        <h3>Le Groupe</h3>
+        <p>Billed monthly at a flat rate of ₦50,000 — one payment covers the full month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:760px;">
+    <p class="eyebrow">Attendance &amp; cancellation</p>
+    <h2>If you need to miss a session.</h2>
+    <p>This applies to one-on-one sessions:</p>
+    <ul style="color:var(--ink-soft); padding-left:1.2em;">
+      <li style="margin-bottom:0.6em;">Notify your teacher at least <strong>12 hours</strong> before the scheduled time.</li>
+      <li style="margin-bottom:0.6em;">Give notice in time, and you won't be charged for that session.</li>
+      <li>Miss a session without notice, and a <strong>₦5,000</strong> penalty applies.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Found your format?</h2>
+    <p>Enrollment takes a couple of minutes — pick your package and we'll take it from there.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="enroll.html">Enroll now</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="wordmark" style="font-size:1.15rem;">Café des Langues</p>
+      <p>Online French School.</p>
+    </div>
+    <div>
+      <p class="eyebrow">Contact</p>
+      <a href="mailto:cafedeslangues.edu@gmail.com">cafedeslangues.edu@gmail.com</a>
+    </div>
+    <div>
+      <p class="eyebrow">Quick links</p>
+      <a href="pricing.html">La Carte</a>
+      <a href="code-of-conduct.html">Code of Conduct</a>
+      <a href="enroll.html">Enroll</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="fineprint">© <span id="year"></span> Café des Langues. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
