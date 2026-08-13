@@ -471,6 +471,115 @@ p{ margin:0 0 1em; color:var(--ink-soft); }
 }
 
 /* ============================================================
+   Placement assessment
+   ============================================================ */
+.assess-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:36px;
+  margin-top:28px;
+}
+.assess-intro{ display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; }
+.assess-meta{ font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-soft); white-space:nowrap; }
+
+.assess-fieldset{
+  border:none; margin:0; padding:0;
+}
+.assess-fieldset legend{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.05rem;
+  color:var(--navy-deep);
+  padding:0 0 4px;
+  width:100%;
+}
+.assess-section{ margin-top:32px; padding-top:32px; border-top:1px solid var(--line); }
+.assess-section:first-of-type{ margin-top:24px; padding-top:0; border-top:none; }
+
+.assess-field{ margin-bottom:20px; }
+.assess-field label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:0.5em;
+}
+.assess-field input[type="text"],
+.assess-field input[type="email"]{
+  width:100%;
+  font-family:var(--font-body);
+  font-size:1rem;
+  padding:0.7em 0.9em;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  color:var(--ink);
+}
+.assess-field input:focus-visible{ outline:3px solid var(--gold); outline-offset:1px; }
+
+.quiz-q{ margin-bottom:26px; }
+.quiz-q p.q-text{ color:var(--ink); font-weight:500; margin-bottom:0.7em; }
+.quiz-options{ display:grid; gap:0.55em; }
+.quiz-option{
+  display:flex;
+  align-items:flex-start;
+  gap:0.65em;
+  font-size:0.95rem;
+  color:var(--ink-soft);
+  cursor:pointer;
+}
+.quiz-option input{ margin-top:0.3em; accent-color:var(--wine); }
+
+.check-item{
+  display:flex;
+  align-items:flex-start;
+  gap:0.65em;
+  padding:12px 0;
+  border-bottom:1px dashed var(--line);
+  font-size:0.95rem;
+  color:var(--ink-soft);
+  cursor:pointer;
+}
+.check-item:last-child{ border-bottom:none; }
+.check-item input{ margin-top:0.3em; accent-color:var(--sage); flex-shrink:0; }
+
+.assess-submit-row{ margin-top:32px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.assess-status{ font-family:var(--font-mono); font-size:0.82rem; color:var(--ink-soft); }
+.assess-status.is-error{ color:var(--wine); }
+.assess-status.is-ok{ color:var(--sage); }
+
+.result-panel{
+  margin-top:28px;
+  background:var(--navy);
+  color:var(--paper);
+  border-radius:var(--radius);
+  padding:32px;
+  display:none;
+}
+.result-panel.is-visible{ display:block; }
+.result-badge{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+  margin-bottom:0.6em;
+  display:inline-block;
+}
+.result-level{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.8rem;
+  color:var(--paper);
+  margin:0 0 0.4em;
+}
+.result-note{ color:rgba(241,238,229,0.82); max-width:60ch; margin-bottom:0; }
+
+/* ============================================================
    Page intro (used on pricing / code-of-conduct / enroll)
    ============================================================ */
 .page-hero{
