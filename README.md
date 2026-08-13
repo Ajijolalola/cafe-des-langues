@@ -19,6 +19,24 @@ If you later want a custom domain (e.g. `cafedeslangues.com`), that's also set f
 - The enrollment button on `enroll.html` points to `https://bit.ly/CafedesLangues`. Update that one link if the form URL changes.
 - Contact email (`cafedeslangues.edu@gmail.com`) appears in the footer of every page and on the code of conduct and enroll pages.
 
+## Placement assessment (on the Enroll page)
+
+The Enroll page now includes a short placement quiz — 5 grammar/vocab questions plus a "what can you already do" checklist — that scores the visitor into Beginner / Intermediate / Advanced and shows it on screen immediately.
+
+**To get results emailed to you, one setup step is required:**
+
+1. Go to [formspree.io](https://formspree.io) and create a free account.
+2. Create a new form (separate from your enrollment bit.ly form, so the two don't mix).
+3. Copy the endpoint URL it gives you — it looks like `https://formspree.io/f/xxxxxxx`.
+4. Open `js/assessment.js`, find this line near the top:
+   ```
+   const FORM_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
+   ```
+   and replace the placeholder with your real endpoint.
+5. Commit the change. That's it — results will start emailing to whatever address you registered with Formspree.
+
+Until you do this, the quiz still works and shows the result on screen — it just can't email it to you, and visitors will see a fallback link to email you their result manually instead.
+
 ## What still needs your eye
 
 - The **hero and "about" copy** on `index.html` (the "A café table, not a classroom" section) is a first draft — written from the school's format and policies, not dictated content. Reword it to sound like you.
