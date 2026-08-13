@@ -1,0 +1,484 @@
+/* ============================================================
+   Café des Langues — design tokens
+   ============================================================ */
+:root{
+  --paper:       #F1EEE5;
+  --paper-deep:  #E7E0CD;
+  --ink:         #211E19;
+  --ink-soft:    #55503F;
+  --navy:        #1F2C3E;
+  --navy-deep:   #141C28;
+  --gold:        #D7A23F;
+  --gold-soft:   #F0DDA9;
+  --wine:        #7C2C24;
+  --wine-deep:   #5B1E19;
+  --sage:        #56684C;
+  --line:        #C9BFA4;
+  --line-dark:   rgba(241,238,229,0.22);
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body:    "Work Sans", "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  --wrap: 1120px;
+  --radius: 3px;
+  --shadow: 0 22px 48px -26px rgba(20,28,40,0.45);
+}
+
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior:smooth; }
+}
+
+*, *::before, *::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color:inherit; text-decoration:none; }
+
+.wrap{
+  max-width:var(--wrap);
+  margin:0 auto;
+  padding:0 28px;
+}
+
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  font-weight:700;
+  line-height:1.1;
+  margin:0 0 0.5em;
+  color:var(--navy-deep);
+}
+
+h1{ font-size:clamp(2.4rem, 5vw, 4.1rem); font-weight:600; }
+h2{ font-size:clamp(1.7rem, 3.2vw, 2.5rem); }
+h3{ font-size:1.25rem; font-weight:600; }
+
+p{ margin:0 0 1em; color:var(--ink-soft); }
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--wine);
+  margin:0 0 0.9em;
+  display:inline-flex;
+  align-items:center;
+  gap:0.6em;
+}
+.eyebrow::before{
+  content:"";
+  width:22px; height:1px;
+  background:var(--wine);
+  display:inline-block;
+}
+
+.lede{ font-size:1.15rem; max-width:52ch; }
+
+:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5em;
+  font-family:var(--font-mono);
+  font-size:0.85rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  padding:0.95em 1.6em;
+  border-radius:var(--radius);
+  border:1px solid transparent;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+.btn:hover{ transform:translateY(-2px); }
+
+.btn-wine{
+  background:var(--wine);
+  color:var(--paper);
+  box-shadow:0 14px 30px -16px rgba(124,44,36,0.75);
+}
+.btn-wine:hover{ background:var(--wine-deep); }
+
+.btn-outline{
+  border-color:var(--navy);
+  color:var(--navy-deep);
+}
+.btn-outline:hover{ background:var(--navy); color:var(--paper); }
+
+.btn-gold{
+  background:var(--gold);
+  color:var(--navy-deep);
+  box-shadow:0 14px 30px -16px rgba(215,162,63,0.8);
+}
+.btn-gold:hover{ background:#c8933a; }
+
+.cta-row{ display:flex; flex-wrap:wrap; gap:1em; margin-top:1.6em; }
+
+/* ============================================================
+   Header / nav
+   ============================================================ */
+.site-header{
+  background:var(--navy-deep);
+  color:var(--paper);
+  position:sticky; top:0; z-index:40;
+  border-bottom:1px solid var(--line-dark);
+}
+.site-header .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:0.8em;
+  padding-top:16px;
+  padding-bottom:16px;
+}
+.wordmark{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:600;
+  font-size:1.3rem;
+  color:var(--paper);
+}
+.wordmark span{ color:var(--gold); font-style:normal; }
+
+.site-nav{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1.6em;
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.site-nav a{ color:var(--paper); opacity:0.82; padding:0.3em 0; border-bottom:1px solid transparent; }
+.site-nav a:hover{ opacity:1; border-color:var(--gold); }
+.site-nav a.is-active{ opacity:1; border-color:var(--gold); color:var(--gold); }
+.site-nav a.nav-cta{
+  background:var(--wine);
+  padding:0.6em 1.1em;
+  border-radius:var(--radius);
+  opacity:1;
+  border-bottom:none;
+}
+.site-nav a.nav-cta:hover{ background:var(--wine-deep); }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero{
+  background:
+    radial-gradient(circle at 82% 18%, rgba(215,162,63,0.16), transparent 45%),
+    var(--navy);
+  color:var(--paper);
+  padding:96px 0 84px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-90px; top:-90px;
+  width:340px; height:340px;
+  border-radius:50%;
+  border:1px solid var(--line-dark);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  right:-40px; top:-40px;
+  width:220px; height:220px;
+  border-radius:50%;
+  border:1px solid var(--line-dark);
+}
+.hero-grid{ position:relative; max-width:680px; }
+.hero .eyebrow{ color:var(--gold-soft); }
+.hero .eyebrow::before{ background:var(--gold-soft); }
+.hero h1{ color:var(--paper); }
+.hero .lede{ color:rgba(241,238,229,0.82); }
+
+/* ============================================================
+   Sections
+   ============================================================ */
+.section{ padding:84px 0; border-bottom:1px solid var(--line); }
+.section:last-of-type{ border-bottom:none; }
+.section-alt{ background:var(--paper-deep); }
+.section-dark{ background:var(--navy); color:var(--paper); border-bottom:none; }
+.section-dark h2, .section-dark h3{ color:var(--paper); }
+.section-dark p{ color:rgba(241,238,229,0.78); }
+.section-dark .eyebrow{ color:var(--gold-soft); }
+.section-dark .eyebrow::before{ background:var(--gold-soft); }
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:56px;
+  align-items:start;
+}
+@media (max-width:840px){ .about-grid{ grid-template-columns:1fr; } }
+
+.format-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:32px;
+  box-shadow:var(--shadow);
+}
+.menu-list{ margin:0; }
+.menu-item{ padding:18px 0; border-bottom:1px dashed var(--line); }
+.menu-item:last-child{ border-bottom:none; }
+.menu-item dt{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.15rem;
+  color:var(--navy-deep);
+  display:flex;
+  align-items:baseline;
+  gap:0.6em;
+  flex-wrap:wrap;
+}
+.menu-item .tag{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--wine);
+  background:var(--gold-soft);
+  padding:0.2em 0.55em;
+  border-radius:2px;
+}
+.menu-item dd{ margin:0.4em 0 0; color:var(--ink-soft); }
+
+/* three-column feature strip */
+.trio{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:36px;
+}
+@media (max-width:760px){ .trio{ grid-template-columns:1fr; } }
+.trio-item{
+  border-top:2px solid var(--gold);
+  padding-top:18px;
+}
+.trio-item h3{ margin-bottom:0.4em; }
+
+/* schedule snapshot */
+.schedule-card{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0;
+  border:1px solid var(--line-dark);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-top:28px;
+}
+@media (max-width:700px){ .schedule-card{ grid-template-columns:1fr; } }
+.schedule-cell{ padding:26px 30px; }
+.schedule-cell + .schedule-cell{ border-left:1px solid var(--line-dark); }
+@media (max-width:700px){ .schedule-cell + .schedule-cell{ border-left:none; border-top:1px solid var(--line-dark); } }
+.schedule-cell .eyebrow{ color:var(--gold-soft); }
+.schedule-cell .eyebrow::before{ background:var(--gold-soft); }
+.schedule-time{ font-family:var(--font-mono); font-size:1.05rem; color:var(--paper); }
+
+/* ============================================================
+   La Carte / pricing
+   ============================================================ */
+.carte-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:44px;
+  position:relative;
+}
+.carte-ring{
+  position:absolute;
+  width:170px; height:170px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  right:-40px; bottom:-50px;
+  opacity:0.55;
+}
+.carte-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  padding:26px 0;
+  border-bottom:1px dashed var(--line);
+}
+.carte-row:last-child{ border-bottom:none; }
+.carte-name{ font-family:var(--font-display); font-weight:600; font-size:1.35rem; color:var(--navy-deep); }
+.carte-name small{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--wine);
+  font-weight:500;
+  margin-top:0.35em;
+}
+.carte-price{
+  font-family:var(--font-mono);
+  font-size:1.35rem;
+  color:var(--wine);
+  white-space:nowrap;
+}
+.carte-price small{ font-size:0.6rem; color:var(--ink-soft); display:block; text-align:right; letter-spacing:0.05em; }
+.carte-note{ font-size:0.92rem; color:var(--ink-soft); margin-top:8px; max-width:56ch; }
+
+.footnote{
+  font-family:var(--font-mono);
+  font-size:0.82rem;
+  color:var(--ink-soft);
+  border-left:2px solid var(--gold);
+  padding-left:16px;
+  margin:0 0 14px;
+}
+
+/* ============================================================
+   Code of conduct
+   ============================================================ */
+.conduct-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+@media (max-width:760px){ .conduct-grid{ grid-template-columns:1fr; } }
+.conduct-card{
+  border-radius:var(--radius);
+  padding:32px;
+}
+.conduct-card.do{ background:rgba(86,104,76,0.09); border:1px solid rgba(86,104,76,0.35); }
+.conduct-card.dont{ background:rgba(124,44,36,0.07); border:1px solid rgba(124,44,36,0.3); }
+.conduct-card h3{ display:flex; align-items:center; gap:0.5em; }
+.conduct-card ul{ margin:0; padding-left:1.1em; }
+.conduct-card li{ margin-bottom:0.65em; color:var(--ink-soft); }
+.mark-do{ color:var(--sage); }
+.mark-dont{ color:var(--wine); }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-item{
+  border-bottom:1px solid var(--line);
+  padding:20px 0;
+}
+.faq-item summary{
+  cursor:pointer;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.08rem;
+  color:var(--navy-deep);
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{
+  content:"+";
+  font-family:var(--font-mono);
+  font-size:1.3rem;
+  color:var(--wine);
+  flex-shrink:0;
+}
+.faq-item[open] summary::after{ content:"–"; }
+.faq-item p{ margin-top:0.8em; }
+
+/* ============================================================
+   Steps (enroll)
+   ============================================================ */
+.steps{ counter-reset:step; margin-top:12px; }
+.step{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:22px;
+  padding:26px 0;
+  border-bottom:1px solid var(--line);
+}
+.step:last-child{ border-bottom:none; }
+.step-num{
+  counter-increment:step;
+  font-family:var(--font-mono);
+  font-size:0.95rem;
+  color:var(--wine);
+  border:1px solid var(--wine);
+  width:40px; height:40px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+.step-num::before{ content:counter(step, decimal-leading-zero); }
+
+/* ============================================================
+   CTA band
+   ============================================================ */
+.cta-band{
+  background:var(--wine);
+  color:var(--paper);
+  padding:64px 0;
+  text-align:center;
+}
+.cta-band h2{ color:var(--paper); }
+.cta-band p{ color:rgba(241,238,229,0.85); max-width:56ch; margin-left:auto; margin-right:auto; }
+.cta-band .cta-row{ justify-content:center; }
+.cta-band .btn-outline{ border-color:var(--paper); color:var(--paper); }
+.cta-band .btn-outline:hover{ background:var(--paper); color:var(--wine-deep); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer{
+  background:var(--navy-deep);
+  color:rgba(241,238,229,0.75);
+  padding:56px 0 28px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:32px;
+  margin-bottom:36px;
+}
+@media (max-width:700px){ .footer-grid{ grid-template-columns:1fr; } }
+.footer-grid a{ display:block; margin-bottom:0.5em; opacity:0.82; }
+.footer-grid a:hover{ opacity:1; color:var(--gold-soft); }
+.footer-grid p{ color:rgba(241,238,229,0.65); margin-bottom:0.5em; }
+.footer-grid .eyebrow{ color:var(--gold-soft); }
+.footer-grid .eyebrow::before{ background:var(--gold-soft); }
+.fineprint{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  letter-spacing:0.04em;
+  color:rgba(241,238,229,0.45);
+  border-top:1px solid var(--line-dark);
+  padding-top:22px;
+}
+
+/* ============================================================
+   Page intro (used on pricing / code-of-conduct / enroll)
+   ============================================================ */
+.page-hero{
+  background:var(--navy);
+  color:var(--paper);
+  padding:72px 0 56px;
+}
+.page-hero h1{ color:var(--paper); font-size:clamp(2rem, 4vw, 3rem); }
+.page-hero .eyebrow{ color:var(--gold-soft); }
+.page-hero .eyebrow::before{ background:var(--gold-soft); }
+.page-hero p{ color:rgba(241,238,229,0.82); max-width:60ch; }
